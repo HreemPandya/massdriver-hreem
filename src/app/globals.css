@@ -1,24 +1,62 @@
-@import "tailwindcss";
+@import "tailwindcss"; 
+/* Remove CDN import if using local fonts */
+/* @import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&f[]=clash-grotesk@300,400,500,600,700&display=swap"); */
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: rgb(74, 164, 222);
+  --color-primary-foreground: rgb(255, 255, 255);
+  
+  --color-text: rgb(0, 0, 0);
+  --color-muted: rgb(243, 244, 246);
+  --color-muted-foreground: rgb(107, 114, 128);
+  --color-secondary: rgb(249, 250, 251);
+  --color-secondary-foreground: rgb(0, 0, 0);
+  --color-border: rgb(229, 231, 235);
+  
+  --color-background: rgb(255, 255, 255);
+  --color-foreground: rgb(0, 0, 0);
+  --color-card: rgb(255, 255, 255);
+  --color-card-foreground: rgb(0, 0, 0);
+  --color-popover: rgb(255, 255, 255);
+  --color-popover-foreground: rgb(0, 0, 0);
+ 
+  --color-accent: rgb(243, 244, 246);
+  --color-accent-foreground: rgb(0, 0, 0);
+  --color-ring: rgb(74, 164, 222);
+  --color-input: rgb(229, 231, 235);
+  --color-destructive: rgb(239, 68, 68);
+  --color-destructive-foreground: rgb(255, 255, 255);
+  
+  --radius: 0.5rem;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-family: var(--font-clash-grotesk), sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-satoshi), sans-serif;
+}
+
+.font-satoshi {
+  font-family: var(--font-satoshi), sans-serif;
+}
+
+.font-clash-grotesk {
+  font-family: var(--font-clash-grotesk), sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+    padding: 1rem;
+    border-radius: var(--radius);
+  }
 }
