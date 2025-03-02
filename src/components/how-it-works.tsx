@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Code, Upload, BarChart } from "lucide-react"
-import Image from "next/image"
 
 const steps = [
   {
